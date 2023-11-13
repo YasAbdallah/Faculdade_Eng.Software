@@ -1,0 +1,78 @@
+Caro estudante
+
+​Nesta atividade, você é convidado a realizar uma atividade para verificar como a disciplina em questão pode contribuir na sua experiência e formação profissional. Por este motivo, nesta atividade discursiva, você é instigado a solucionar um problema voltado para sua área de formação.
+
+A importância do conhecimento em paradigmas de linguagens de programação é essencial para carreira de qualquer profissional da área, isso porque permite que o profissional consiga ler e analisar códigos de diferentes tipos de linguagens, independente da linguagem utilizada. Os conceitos, na sua grande maioria, se repetem tornando o profissional mais completo e dinâmico.
+
+Com base em seu estudo e sabendo sobre os conceitos envolvendo os paradigmas de linguagens de programação, analise o código, a seguir, independentemente de você ter conhecimento na linguagem em questão ou não:
+
+Animal.java
+public class Animal {
+
+    private String nome;
+    
+    public String tipoDeAlimentacao() {
+        return null;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+Cachorro.java
+public class Cachorro extends Animal{
+
+    @Override
+    public String tipoDeAlimentacao() {
+        return "Ração";
+    }
+}
+
+Principal.java
+public class Principal {
+
+    public static void main(String[] args) {
+        Animal a = new Cachorro();
+        System.out.println(a.tipoDeAlimentacao());
+    }
+}
+
+Sobre o código anterior, descreva qual o paradgima de programação está sendo utilizada, justificando a resposta. Logo após descreva os conceitos deste paradgima estão sendo aplicados no código, também fazendo sua justificativa.
+
+
+
+
+
+Resposta:
+O Paradigma usado no exercício é o da programação orientada a objeto, pois, no código de exemplo, está representado os pilares desse paradigma como abstração, herança, polimorfismo e encapsulamento.
+
+Como dito anteriormente sobre os pilares do paradigma utilizado, os conceitos usados no código acima são: 
+Abstração: onde é pego algumas informações do mundo real como animal, nome, tipo de alimento e os coloca no mundo da computação representando-os como classes, atributos e metodos respectivamente.
+Encapsulamento: O atributo nome, onde é designado como privado fazendo com que ele saja acessível por meio do get e set que são os métodos getNome() e setNome() fazendo com que o dado seja acessado de forma que não prejudique sua integridade.
+Herança: onde a classe "Cachorro" herda os atributos e métodos da classe "Animal", e é feito uma modificação no método tipoDeAlimento()
+usado a palavra reservada @Override, a qual é informado o tipo de alimento que a classe "Cachorro" utiliza.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

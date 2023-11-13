@@ -1,0 +1,86 @@
+Algoritmo abastecimento
+
+	Procedimento info(qnt_km_principal, qnt_km_alternativo, trecho_total, total_combustivel, combustivel_existe: Real)
+	Var
+		comb_necessario: Real
+	Início
+		comb_necessario<- totalParaAbastecer(total_combustivel,qnt combustivel_existe)
+		Escreva(“Será necessário”, comb_necessario, “L para abastecimento.")
+		Escreva(“A distância do trecho planejado é de: ”, qnt_km_principal, “Km”)
+		Escreva(“A distância do trecho alternativo é de: ”, qnt_km_alternativo, “Km”)
+		Escreva(“A distância Total dos trechos planejado e alternativo é de: ”, trecho_total, “Km”)
+		Escreva(“O total de combustível necessário para o percorrimento do trecho é de: ”, total_combustivel, “L”)
+
+	Fim_procedimento
+
+	Função trechoTotal(trecho_principal, trecho_alternativo: Real): Real
+ 	// Está função soma as distancias entre o trecho principal e 
+	// o trecho alternativo.
+	Var
+		soma: Real
+	Início
+		soma <- trecho_principal+trecho_alternativo
+		Retorne soma 
+	Fim_função
+
+	Função margem_seguranca(): Real
+		Retorne 1.3
+	Fim_função
+	
+	Função qntCombustivel(total_km, media_consumo: Real): Real
+	// Está função calcula o total de combustivel que será necessário para
+	// A viagem da aeronave.
+	Var
+		totcombustivel, margem_seguranca: Real
+	Início
+		margem_seguranca <- margem_serguranca()
+		totcombustivel <- (total_km*margem_seguranca)*media_consumo
+
+		Retorne totcombustivel
+	Fim_função
+
+	Função totalParaAbastecimento(total_combustivel, qnt_combustivel_existente:Real): Real
+	// Esta função calcula o quanto é necessário para abastecer o tanque da
+// aeronave para o trajeto 
+	Var
+		total: Real
+	Início
+		total <- total_combustivel - qnt_combustivel_existente
+		Retorne total
+	Fim_função
+
+Var
+	media_litros_km, capacidade_tanque, qnt_km_trecho_principal: Real
+	qnt_km_trecho_alternativo, qnt_combustivel_existe: Real
+	trecho_total, margem_segurança, total_combustivel, combustivel_necessario: Real
+Início
+	// Requerendo ao usuário as informações necessárias
+	Escreva(“Qual é a média de litros por km da aeronave?”)
+	Leia(media_litros_km)
+	
+	Escreva(“Qual a capacidade máxima do tanque de Combustível? ”)
+	Leia(capacidade_tanque)
+
+	Escreva(“Qual a distância do trecho planejado? ”)
+	Leia(qnt_km_trecho_principal)
+
+	Escreva(“Caso ocorra algum problema durante o trecho planejado, informe a quantos KM a aeronave percorrerá em um trecho alternativo”)
+	Leia(qnt_km_trecho_alternativo)
+
+	Escreva(“Quanto de combustível há na aeronave? ”)
+	Leia(qnt_combustivel_existe)
+
+	// Somando os trechos informados e obtendo o total.
+	trecho_total <- trechoTotal(qnt_km_trecho_principal, qnt_km_trecho_alternativo)
+
+	// Pegando o total de combustível necessário para a percurso
+	total_combustivel <- qntCombustivel(trecho_total, media_litros_km)
+
+	// Verificando se a quantidade de combustível é suportado pela aeronave
+	Se (total_combustivel > capacidade_tanque) então
+		Escreva(“Voo Reprovado, reveja seu planejamento.”)
+	Senão
+		Escreva(“Voo Aprovado, bom Voo!”)
+		info(qnt_km_trecho_principal, qnt_km_trecho_alternativo, trecho_total, total_combustivel, qnt_combustivel_existe)
+	Fim_se
+Fim

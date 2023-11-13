@@ -1,0 +1,41 @@
+Enunciado:
+
+Caro estudante
+
+​Nesta atividade, você é convidado a realizar uma atividade para verificar como a disciplina em questão pode contribuir na sua experiência e formação profissional. Por este motivo, nesta atividade discursiva, você é instigado a solucionar um problema voltado para sua área de formação.
+
+Independente da linguagem a se utilizar no desenvolvimento de um software, alguns conceitos básicos de programação se repetem em diversas linguagem. Elementos como tipo de dados, estruturas de condição e repetição, estruturas de dados, como vetores e matrizes são conceitos vistos em diversas linguagens. Isso acaba sendo um ponto positivo, pois a curva de aprendizado em diferentes linguagens se torna relativamente fácil quando se conhece bem estes elementos.
+
+Imagine então que você foi designado para analisar a criação de um sistema de uma loja de materiais de construção, onde é necessário salvar dados como:
+- Cliente: código, nome, cpf, endereco, telefone e email
+- Produto: código, descricao, valor de custo, valor de venda, quantidade em estoque
+ 
+Utilizando uma linguagem fortemente tipada (aquela em que as variáveis tem um tipo bem definido e que precisa ser informado no momento de sua declaração) independente de qual for, descreva os tipos utilizados para os conjuntos de dados deste sistema, justificando sua escolha.
+
+A sua resposta deve ser preenchida no campo destinado a resposta da atividade.
+
+​* Dicas para realizar a atividade:
+1. Durante as aulas, o professor irá fornecer dicas que podem ser utilizadas para a confecção das suas atividades, sendo assim, é de suma importância participar da aula ao vivo, ou assisti-las posteriormente, e
+2. Assista às aulas conceituais da disciplina.
+
+
+________________________________________________________________________________________________________________________________________________________
+
+Resposta:
+
+
+Para os dados de Cliente:
+- código: será usado o tipo inteiro, pois, cada cliente recebe um código único para ser identificado.
+- nome: será utilizado o tipo String, pois, este campo armazena uma cadeia de caracteres.
+- cpf: será utilizado o tipo inteiro, pois, o cpf é uma sequência numérica e será necessário fazer validações nele.
+- endereco: será usado o tipo String por ser uma sequência de caracteres.
+- telefone: será tratado com o tipo inteiro.
+- email: será utilizado o tipo String por também ser uma sequência de caracteres.
+
+Para os dados de Produto:
+- código: será utilizado o tipo inteiro, pois, cada produto recebe um código único para ser identificado assim como cada cliente.
+- descricao: será utilizado o tipo string, pois, receberá uma sequência de caracteres descrevendo o produto.
+- valor de custo: será utilizado o tipo float, pois, o valor do custo do produto tem casas decimais e para esse tipo de dado utiliza-se o float.
+- valor de venda: assim como o valor de custo, o valor de venda também utilizará o tipo float por conter casas decimais.
+- quantidade em estoque: será usado o tipo float, pois, apesar de alguns produtos serem unitários outros usam casas decimais como litros de tinta ou quilos de
+pedra, opta-se por usar float para a facilidade do manuseio do programa evitando gambiaras no programa.
